@@ -1,5 +1,13 @@
 import 'dotenv/config';
 import { config, createSchema } from '@keystone-next/keystone/schema';
+import { createAuth } from '@keystone-next/auth';
+import {
+  statelessSessions,
+  withItemData,
+} from '@keystone-next/keystone/session';
+import { User } from './schemas/User';
+import { Project } from './schemas/Project';
+import { Image } from './schemas/Image';
 
 const databaseUrl =
   process.env.DATABASE_URL || 'mongodb://localhost/ethang-backend';
@@ -9,23 +17,38 @@ const sessionConfig = {
   secret: process.env.COOKIE_SECRET,
 };
 
-export default config({
-  server: {
-    cors: {
-      origin: [process.env.FRONTEND_URL],
-      credentials: true,
-    },
+const { withAuth } = createAuth({
+  listKey: 'User',
+  identityField: 'email',
+  secretField: 'password',
+  initFirstItem: {
+    fields: ['name', 'email', 'password', 'url'],
   },
-  db: {
-    adapter: 'mongoose',
-    url: databaseUrl,
-  },
-  lists: createSchema({
-    // TODO create stuff
-  }),
-  ui: {
-    // TODO change for roles
-    isAccessAllowed: () => true,
-  },
-  // TODO add session values
+  // TODO initial roles
 });
+
+export default withAuth(
+  config({
+    server: {
+      cors: {
+        origin: [process.env.FRONTEND_URL],
+        credentials: true,
+      },
+    },
+    db: {
+      adapter: 'mongoose',
+      url: databaseUrl,
+    },
+    lists: createSchema({
+      User,
+      Project,
+      Image,
+    }),
+    ui: {
+      isAccessAllowed: ({ session }) => session?.data,
+    },
+    session: withItemData(statelessSessions(sessionConfig), {
+      User: `id`,
+    }),
+  })
+);
