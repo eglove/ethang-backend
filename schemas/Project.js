@@ -1,4 +1,5 @@
 import { list } from '@keystone-next/keystone/schema';
+import { document } from '@keystone-next/fields-document';
 import { relationship, text, timestamp } from '@keystone-next/fields';
 
 export const Project = list({
@@ -11,7 +12,11 @@ export const Project = list({
     updated: timestamp(),
     githubLink: text(),
     liveLink: text(),
-    description: text({ isRequired: true, ui: { displayMode: 'textarea' } }),
+    description: document({
+      isRequired: true,
+      links: true,
+      dividers: true,
+    }),
     image: relationship({
       ref: 'Image.project',
       ui: {

@@ -1,4 +1,5 @@
 import { list } from '@keystone-next/keystone/schema';
+import { document } from '@keystone-next/fields-document';
 import { relationship, text, timestamp } from '@keystone-next/fields';
 
 export const Blog = list({
@@ -22,10 +23,15 @@ export const Blog = list({
         inlineEdit: { fields: ['image', 'name', 'alt'] },
       },
     }),
+    content: document({
+      isRequired: true,
+      links: true,
+      dividers: true,
+    }),
   },
   ui: {
     listView: {
-      initialColumns: ['title', 'author', 'created', 'updated'],
+      initialColumns: ['order', 'title', 'author', 'created', 'updated'],
     },
   },
 });
