@@ -8,7 +8,10 @@ export const Blog = list({
     author: relationship({
       ref: 'User.blogPost',
     }),
-    created: timestamp({ isRequired: true }),
+    created: timestamp({
+      isRequired: true,
+      defaultValue: Date.now,
+    }),
     updated: timestamp(),
     image: relationship({
       ref: 'Image.blog',

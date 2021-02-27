@@ -4,7 +4,10 @@ import { relationship, text, timestamp } from '@keystone-next/fields';
 export const Project = list({
   fields: {
     name: text({ isRequired: true }),
-    created: timestamp({ isRequired: true }),
+    created: timestamp({
+      isRequired: true,
+      defaultValue: Date.now,
+    }),
     updated: timestamp(),
     githubLink: text(),
     liveLink: text(),
