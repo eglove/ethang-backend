@@ -7,7 +7,7 @@ import { cloudinaryConfig } from '../util/cloudinaryConfig';
 export const Image = list({
   fields: {
     image: cloudinaryImage({
-      cloudinary: cloudinaryConfig,
+      cloudinary: cloudinaryConfig('ethang/images'),
       label: 'Source',
     }),
     name: text(),
