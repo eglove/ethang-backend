@@ -39,11 +39,6 @@
     "prettier": "2.1.1",
     "react-test-renderer": "^17.0.1"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn updateBrowserslist && yarn lint-staged"
-    }
-  },
   "lint-staged": {
     "*.js": "eslint --cache --fix"
   },
@@ -53,7 +48,8 @@
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
     "test": "npm run test:jest --",
-    "updateBrowserslist": "npx browserslist@latest --update-db"
+    "updateBrowserslist": "npx browserslist@latest --update-db",
+    "postinstall": "husky install"
   },
   "jest": {
     "snapshotSerializers": [
