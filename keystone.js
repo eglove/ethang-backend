@@ -8,6 +8,9 @@ import {
 import { User } from './schemas/User';
 import { Project } from './schemas/Project';
 import { Image } from './schemas/Image';
+import { Logo } from './schemas/Logo';
+import { Blog } from './schemas/Blog';
+import { Course } from './schemas/Course';
 
 const databaseUrl =
   process.env.DATABASE_URL || 'mongodb://localhost/ethang-backend';
@@ -43,6 +46,9 @@ export default withAuth(
       User,
       Project,
       Image,
+      Logo,
+      Blog,
+      Course,
     }),
     ui: {
       isAccessAllowed: ({ session }) => session?.data,

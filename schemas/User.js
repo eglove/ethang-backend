@@ -9,5 +9,14 @@ export const User = list({
     email: text({ isRequired: true, isUnique: true }),
     password: password(),
     url: text(),
+    blogPost: relationship({
+      ref: 'Blog.author',
+      many: true,
+    }),
+  },
+  ui: {
+    listView: {
+      initialColumns: ['name', 'email', 'url'],
+    },
   },
 });
