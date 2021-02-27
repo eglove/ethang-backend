@@ -44,7 +44,9 @@
     "*.js": "eslint --cache --fix"
   },
   "scripts": {
-    "dev": "keystone-next",
+    "dev": "keystone-next dev",
+    "build": "keystone-next build",
+    "start": "keystone-next start",
     "test:jest": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
