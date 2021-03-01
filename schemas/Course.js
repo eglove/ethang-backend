@@ -28,7 +28,10 @@ export const Course = list({
   ui: {
     listView: {
       initialColumns: ['order', 'title'],
-      initialSort: ['order'],
+      initialSort: {
+        field: 'order',
+        direction: 'ASC',
+      },
     },
   },
 });
