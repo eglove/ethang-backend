@@ -27,7 +27,8 @@ export const Course = list({
   },
   ui: {
     listView: {
-      initialColumns: ['course', 'name', 'alt'],
+      initialColumns: ['order', 'title'],
+      initialSort: ['order'],
     },
   },
 });
