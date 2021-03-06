@@ -13,6 +13,7 @@ export const Course = list({
     title: text({ isRequired: true }),
     url: text(),
     hours: text(),
+    lastCourseUpdate: integer(),
     complete: checkbox(),
     updated: timestamp({ defaultValue: Date.now }),
     logo: relationship({
@@ -27,7 +28,7 @@ export const Course = list({
   },
   ui: {
     listView: {
-      initialColumns: ['order', 'title'],
+      initialColumns: ['order', 'title', 'lastCourseUpdate'],
       initialSort: {
         field: 'order',
         direction: 'ASC',
