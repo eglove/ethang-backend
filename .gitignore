@@ -1,6 +1,15 @@
 
-# Created by https://www.toptal.com/developers/gitignore/api/intellij
-# Edit at https://www.toptal.com/developers/gitignore?templates=intellij
+### Keystonejs ###
+.keystone/
+
+### ESLint ###
+.eslintcache/
+
+# Created by https://www.toptal.com/developers/gitignore/api/intellij,react,dotenv
+# Edit at https://www.toptal.com/developers/gitignore?templates=intellij,react,dotenv
+
+### dotenv ###
+.env
 
 ### Intellij ###
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio, WebStorm and Rider
@@ -105,11 +114,6 @@ fabric.properties
 # https://plugins.jetbrains.com/plugin/12206-codestream
 .idea/codestream.xml
 
-# End of https://www.toptal.com/developers/gitignore/api/intellij
-
-# Created by https://www.toptal.com/developers/gitignore/api/react
-# Edit at https://www.toptal.com/developers/gitignore?templates=react
-
 ### react ###
 .DS_*
 *.log
@@ -126,18 +130,5 @@ psd
 thumb
 sketch
 
-# End of https://www.toptal.com/developers/gitignore/api/react
-
-# Created by https://www.toptal.com/developers/gitignore/api/dotenv
-# Edit at https://www.toptal.com/developers/gitignore?templates=dotenv
-
-### dotenv ###
-.env
-
-# End of https://www.toptal.com/developers/gitignore/api/dotenv
-
-### Keystonejs ###
-.keystone/
-
-.eslintcache
+# End of https://www.toptal.com/developers/gitignore/api/intellij,react,dotenv
 
