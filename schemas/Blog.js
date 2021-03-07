@@ -24,8 +24,40 @@ export const Blog = list({
       },
     }),
     content: document({
-      isRequired: true,
+      formatting: {
+        alignment: {
+          center: true,
+          end: true,
+        },
+        blockTypes: {
+          blockquote: true,
+          code: true,
+        },
+        inlineMarks: {
+          bold: true,
+          code: true,
+          italic: true,
+          keyboard: true,
+          strikethrough: true,
+          subscript: true,
+          superscript: true,
+          underline: true,
+        },
+        headingLevels: [1, 2, 3, 4, 5, 6],
+        listTypes: {
+          ordered: true,
+          unordered: true,
+        },
+        softBreaks: true,
+      },
       links: true,
+      layouts: [
+        [1, 1],
+        [1, 1, 1],
+        [2, 1],
+        [1, 2],
+        [1, 2, 1],
+      ],
       dividers: true,
     }),
   },

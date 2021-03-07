@@ -3,7 +3,7 @@
 .keystone/
 
 ### ESLint ###
-.eslintcache/
+.eslintcache
 
 # Created by https://www.toptal.com/developers/gitignore/api/intellij,react,dotenv
 # Edit at https://www.toptal.com/developers/gitignore?templates=intellij,react,dotenv
