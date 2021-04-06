@@ -11,6 +11,7 @@ export const Course = list({
   fields: {
     order: integer({ isRequired: true, isUnique: true }),
     title: text({ isRequired: true }),
+    instructor: text({ isRequired: false }),
     url: text(),
     hours: text(),
     lastCourseUpdate: integer(),
@@ -28,7 +29,7 @@ export const Course = list({
   },
   ui: {
     listView: {
-      initialColumns: ['order', 'title', 'lastCourseUpdate'],
+      initialColumns: ['order', 'title', 'instructor', 'lastCourseUpdate'],
       initialSort: {
         field: 'order',
         direction: 'ASC',
